@@ -52,6 +52,7 @@ body{
 .heading {
     color: var(--bg_heading_button);
     font-size: 3em;
+    font-family: BigShoulderDisplay;
 }
 
 .sedans{
