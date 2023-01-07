@@ -1,0 +1,124 @@
+:root {
+    --firstCard: hsl(31, 77%, 52%);
+    --secondCard: hsl(184, 100%, 22%);
+    --thirdCard: hsl(179, 100%, 13%);
+
+    --paragraph: hsla(0, 0%, 100%, 0.75);
+    --bg_heading_button: hsl(0, 0%, 95%);
+}
+
+@font-face {
+    font-family: Lexend;
+    src: url("./fonts/LexendDeca-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: BigShoulderDisplay;
+    src: url("./fonts/BigShouldersDisplay-VariableFont_wght.ttf");
+}
+
+body{
+    background-color: var(--bg_heading_button);
+    margin: 0; padding: 0;
+    font-size: 15px;
+    font-family: Lexend;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: .6em;
+}
+
+.cardholder {
+    flex-basis: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.item{
+    position: relative;
+    padding: 6em 4em;
+}
+
+.info {
+    color: var(--paragraph);
+    font-size: 1.5em;
+}
+
+.heading {
+    color: var(--bg_heading_button);
+    font-size: 3em;
+}
+
+.sedans{
+    background-color: var(--firstCard);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.suvs {
+    background-color: var(--secondCard);
+}
+
+
+.luxury{
+    background-color: var(--thirdCard);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+button[type=button] {
+    background-color: var(--bg_heading_button);
+    border: 4px solid var(--bg_heading_button);
+    padding: .8em 1.8em;
+    font-size: 1.2em;
+    margin: 20px 0 0 0;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+button#sedans {
+    color: var(--firstCard);
+}
+
+button#suvs{
+    color: var(--secondCard);
+}
+
+button#luxury{
+    color: var(--thirdCard);
+}
+
+button#sedans:hover, button#suvs:hover, button#luxury:hover{
+    background-color: transparent;
+    color: var(--bg_heading_button);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+    .cardholder {
+        grid-template-columns: 1fr;
+        height: 80vh;
+        flex-basis: 100%;
+    }
+    .container{
+        padding: 2em 4em;
+    }
+    .sedans{
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+    }
+
+    .luxury{
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    footer{
+        display: none;
+    }
+}
